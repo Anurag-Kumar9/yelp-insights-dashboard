@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Insights Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Restaurant Insights</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <input type="text" id="restaurant-id-input" placeholder="Enter Restaurant ID">
+            <button id="search-button">Search</button>
+        </section>
+        <section id="spinner" class="spinner" style="display: none;"></section>
+        <div id="results-container" class="results-container" style="display: none;">
+            <div class="column left">
+                <h2 id="restaurant-name"></h2>
+                <section>
+                    <h3>Positivity Score</h3>
+                    <div id="positivity-score"></div>
+                </section>
+                <section>
+                    <h3>Top Positive Keywords</h3>
+                    <ul id="positive-keywords-list"></ul>
+                </section>
+                <section>
+                    <h3>Top Negative Keywords</h3>
+                    <ul id="negative-keywords-list"></ul>
+                </section>
+            </div>
+            <div class="column right">
+                <section>
+                    <h3>Customer Archetypes</h3>
+                    <table id="cluster-table">
+                        <thead>
+                            <tr>
+                                <th>Customer Type</th>
+                                <th>Visit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+                <section class="what-if-section">
+                    <h3>What-If Predictor</h3>
+                    <textarea id="review-text-input" placeholder="Type a review..."></textarea>
+                    <button id="predict-button">Predict</button>
+                    <div id="prediction-result"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
