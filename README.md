@@ -8,7 +8,7 @@ A production-ready data engineering pipeline that turns 7 million Yelp reviews i
 
 ## 🎬 See It In Action
 
-> **[Demo GIF placeholder]**
+![Live Demo of the Yelp Insights Dashboard](https://raw.githubusercontent.com/Anurag-Kumar9/yelp-insights-dashboard/main/assets/yelp_insight.gif)
 
 ---
 
