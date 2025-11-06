@@ -34,15 +34,13 @@ def import_business_data():
         
         total_rows = 0
         for i, chunk in enumerate(reader):
-            
-            # --- 💡 NEW LINES START 💡 ---
+            # Convert all object columns to strings
             # Convert columns that are dicts into simple strings (JSON strings)
             # This solves the "type 'dict' is not supported" error
             if 'attributes' in chunk.columns:
                 chunk['attributes'] = chunk['attributes'].astype(str)
             if 'hours' in chunk.columns:
                 chunk['hours'] = chunk['hours'].astype(str)
-            # --- 💡 NEW LINES END 💡 ---
 
             # Now, write this cleaned chunk to the 'business' table
             chunk.to_sql(TABLE_NAME, conn, if_exists='append', index=False)

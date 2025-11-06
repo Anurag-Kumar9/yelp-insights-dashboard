@@ -86,7 +86,7 @@ def train_model():
     # joblib is the standard way to save sklearn models.
     print(f"Saving trained model pipeline to '{MODEL_FILE}'...")
     joblib.dump(pipeline, MODEL_FILE, compress=3) # Add compression to reduce file size
-    print(f"--- ✅ Model saved successfully! ---")
+    print(f"--- Model saved successfully! ---")
 
 
 if __name__ == "__main__":

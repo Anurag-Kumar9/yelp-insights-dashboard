@@ -4,7 +4,7 @@ import os
 import time
 
 # --- Configuration ---
-JSON_FILE = 'yelp_academic_dataset_user.json' # ⚠️ Check this filename!
+JSON_FILE = 'yelp_academic_dataset_user.json'
 DATABASE_FILE = 'yelp.db'
 TABLE_NAME = 'user'
 CHUNK_SIZE = 100000 
@@ -39,11 +39,6 @@ def import_user_data():
         total_rows = 0
         for i, chunk in enumerate(reader):
             
-            # --- 💡 NEW FIX START 💡 ---
-            # This is a more general fix than before.
-            # It finds ALL columns of type 'object' (like dicts or lists)
-            # and converts them to strings. 'user_id', 'name' etc. are
-            # also 'object' type but .astype(str) doesn't hurt them.
             
             for col in chunk.columns:
                 if chunk[col].dtype == 'object':
