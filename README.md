@@ -1,8 +1,36 @@
 # 🍽️ Yelp Insights Dashboard
 
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.119.0-009688.svg)](https://fastapi.tiangolo.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 > **Transform 10GB of raw review data into instant, actionable intelligence**
 
 A production-ready data engineering pipeline that turns 7 million Yelp reviews into a lightning-fast analytics dashboard. Built with Python, FastAPI, SQLite, and machine learning.
+
+**Keywords:** data-engineering, machine-learning, fastapi, nlp, sentiment-analysis, yelp-dataset, python, sqlite, data-pipeline, business-intelligence, dashboard, analytics, tfidf, kmeans-clustering, logistic-regression
+
+---
+
+## 📚 Table of Contents
+
+- [See It In Action](#-see-it-in-action)
+- [The Challenge](#-the-challenge)
+- [System Architecture](#️-system-architecture)
+- [Performance Story](#-performance-the-43-day-optimization-story)
+- [Tech Stack](#️-tech-stack)
+- [Installation & Setup](#-installation--setup)
+- [Dashboard Features](#-dashboard-features)
+- [Project Structure](#-project-structure)
+- [Technical Deep Dive](#-technical-deep-dive)
+- [Performance Optimizations](#-performance-optimizations)
+- [Troubleshooting](#-troubleshooting)
+- [Dataset Statistics](#-dataset-statistics)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
@@ -148,7 +176,32 @@ CREATE INDEX idx_review_business_id ON review(business_id);
    - 16GB+ RAM (for clustering 2M users)
    - 20GB free disk space
 
-### Step 1: Clone & Install Dependencies
+### Quick Start (Automated)
+
+**Use the setup script for guided installation:**
+
+```bash
+git clone https://github.com/Anurag-Kumar9/yelp-insights-dashboard.git
+cd yelp-insights-dashboard
+
+# Make setup script executable (Linux/Mac)
+chmod +x setup.sh
+
+# Run the interactive setup
+./setup.sh
+```
+
+The script will:
+- ✅ Check prerequisites
+- ✅ Create virtual environment
+- ✅ Install dependencies
+- ✅ Guide you through the setup process
+- ✅ Optionally run the full data pipeline
+- ✅ Start the server
+
+### Manual Setup
+
+#### Step 1: Clone & Install Dependencies
 
 ```bash
 git clone https://github.com/Anurag-Kumar9/yelp-insights-dashboard.git
@@ -159,10 +212,10 @@ python -m venv restaurent
 source restaurent/bin/activate  # On Windows: restaurent\Scripts\activate
 
 # Install dependencies
-pip install pandas scikit-learn fastapi uvicorn joblib vaderSentiment tqdm
+pip install -r requirements.txt
 ```
 
-### Step 2: Run the Offline Pipeline (One-Time Setup)
+#### Step 2: Run the Offline Pipeline (One-Time Setup)
 
 ⏱️ **Estimated time: 2-4 hours**
 
@@ -185,7 +238,7 @@ python precompute_nlp.py
 python star_classifier.py
 ```
 
-### Step 3: Launch the Dashboard
+#### Step 3: Launch the Dashboard
 
 ```bash
 uvicorn main:app --reload
@@ -194,6 +247,8 @@ uvicorn main:app --reload
 🎉 **Dashboard available at:** http://127.0.0.1:8000
 
 📚 **API docs (Swagger UI):** http://127.0.0.1:8000/docs
+
+> **💡 Tip:** Use the automated `setup.sh` script to streamline this process!
 
 ---
 
@@ -341,18 +396,41 @@ sqlite3 yelp.db "PRAGMA index_list('review');"
 
 ## 🤝 Contributing
 
-Contributions are welcome! Areas for improvement:
+Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+**Areas for improvement:**
 
 - **Frontend:** Add charts (Chart.js), filters, pagination
 - **Backend:** Implement caching, rate limiting, authentication
 - **ML:** Add topic modeling (LDA), aspect-based sentiment
 - **DevOps:** Docker containerization, CI/CD pipeline
 
+Before contributing, please read:
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## ⭐ Show Your Support
+
+If this project helped you, please consider:
+
+- ⭐ Starring the repository
+- 🍴 Forking it for your own projects
+- 📢 Sharing it with others
+- 🐛 Reporting bugs or suggesting features
+- 💡 Contributing improvements
+
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Anurag-Kumar9/yelp-insights-dashboard&type=Date)](https://star-history.com/#Anurag-Kumar9/yelp-insights-dashboard&Date)
 
 ---
 
