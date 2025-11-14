@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Yelp Insights Dashboard"
+abstract: "A production-ready data engineering pipeline that turns 7 million Yelp reviews into a lightning-fast analytics dashboard with machine learning insights."
+authors:
+  - family-names: "Kumar"
+    given-names: "Anurag"
+repository-code: "https://github.com/Anurag-Kumar9/yelp-insights-dashboard"
+url: "https://github.com/Anurag-Kumar9/yelp-insights-dashboard"
+keywords:
+  - data-engineering
+  - machine-learning
+  - fastapi
+  - nlp
+  - sentiment-analysis
+  - yelp-dataset
+  - python
+  - sqlite
+  - data-pipeline
+  - business-intelligence
+  - dashboard
+  - analytics
+license: MIT

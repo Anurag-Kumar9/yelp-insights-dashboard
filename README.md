@@ -176,7 +176,32 @@ CREATE INDEX idx_review_business_id ON review(business_id);
    - 16GB+ RAM (for clustering 2M users)
    - 20GB free disk space
 
-### Step 1: Clone & Install Dependencies
+### Quick Start (Automated)
+
+**Use the setup script for guided installation:**
+
+```bash
+git clone https://github.com/Anurag-Kumar9/yelp-insights-dashboard.git
+cd yelp-insights-dashboard
+
+# Make setup script executable (Linux/Mac)
+chmod +x setup.sh
+
+# Run the interactive setup
+./setup.sh
+```
+
+The script will:
+- ✅ Check prerequisites
+- ✅ Create virtual environment
+- ✅ Install dependencies
+- ✅ Guide you through the setup process
+- ✅ Optionally run the full data pipeline
+- ✅ Start the server
+
+### Manual Setup
+
+#### Step 1: Clone & Install Dependencies
 
 ```bash
 git clone https://github.com/Anurag-Kumar9/yelp-insights-dashboard.git
@@ -187,10 +212,10 @@ python -m venv restaurent
 source restaurent/bin/activate  # On Windows: restaurent\Scripts\activate
 
 # Install dependencies
-pip install pandas scikit-learn fastapi uvicorn joblib vaderSentiment tqdm
+pip install -r requirements.txt
 ```
 
-### Step 2: Run the Offline Pipeline (One-Time Setup)
+#### Step 2: Run the Offline Pipeline (One-Time Setup)
 
 ⏱️ **Estimated time: 2-4 hours**
 
@@ -213,7 +238,7 @@ python precompute_nlp.py
 python star_classifier.py
 ```
 
-### Step 3: Launch the Dashboard
+#### Step 3: Launch the Dashboard
 
 ```bash
 uvicorn main:app --reload
@@ -222,6 +247,8 @@ uvicorn main:app --reload
 🎉 **Dashboard available at:** http://127.0.0.1:8000
 
 📚 **API docs (Swagger UI):** http://127.0.0.1:8000/docs
+
+> **💡 Tip:** Use the automated `setup.sh` script to streamline this process!
 
 ---
 
